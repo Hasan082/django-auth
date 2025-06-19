@@ -12,21 +12,21 @@
       <div class="col-5">
         <div class="card shadow-sm login-card">
           <div class="card-body">
-            <h2 class="card-title mb-4 text-center ">Login</h2>
+            <h2 class="card-title mb-4 text-center">Login</h2>
 
             <form method="post" novalidate>
               {% csrf_token %}
               {{ form|crispy }}
 
-              <span class="d-block text-center">
-                <button type="submit" class="btn btn-primary mt-3 px-5">Login</button>
-            </span>
+              <span class="d-block text-center"><button type="submit" class="btn btn-primary mt-3 px-5">Login</button></span>
             </form>
           </div>
         </div>
 
         <p class="my-3 text-center">
-          Don't have an account? <a class="muted" href="{% url 'register' %}">Register</a>.
+          Don't have an account?
+          <a class="text-muted" href="{% url 'register' %}">Register</a> <br>
+          <a class="text-muted" href="{% url 'password_reset' %}">Forgot Password?</a>
         </p>
       </div>
     </div>
