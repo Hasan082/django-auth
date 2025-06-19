@@ -11,3 +11,7 @@ from django.shortcuts import render
 def user_profile(request):
     profile = request.user.userprofile
     return render(request, 'accounts/profile.html', {'profile': profile})
+
+
+def register(request):
+    pass
