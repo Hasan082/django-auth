@@ -1,6 +1,13 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
-# Create your views here.
 
-def auth_user_profile(request):
-    pass
+
+
+
+
+
+@login_required
+def user_profile(request):
+    profile = request.user.userprofile
+    return render(request, 'accounts/profile.html', {'profile': profile})

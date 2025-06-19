@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Welcome, {{ user.username }}!</h2>
+
+    <p><strong>Name:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Phone:</strong> {{ profile.phone }}</p>
+
+    {% if profile.image_link %}
+        <p><strong>Profile Image:</strong><br>
+            <img src="{{ profile.image_link.url }}" alt="Profile Image" width="150">
+        </p>
+    {% else %}
+        <p><strong>Profile Image:</strong> Not uploaded</p>
+    {% endif %}
+</div>
+{% endblock %}
